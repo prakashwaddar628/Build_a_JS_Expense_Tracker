@@ -24,6 +24,7 @@ function addExpense(e) {
         li.remove();
         total -= amt;
         updateTotal();
+        localStorage.setItem("expenses", JSON.stringify(expenseArray));
     };
 
     li.appendChild(delbtn);
@@ -31,6 +32,7 @@ function addExpense(e) {
 
     total += amt;
     updateTotal();
+    localStorage.setItem("expenses", JSON.stringify(expenseArray));
 
     document.getElementById('expenses').reset();
     descInput.focus();
